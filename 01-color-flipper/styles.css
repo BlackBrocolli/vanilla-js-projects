@@ -177,6 +177,7 @@ nav {
 }
 .nav-links {
   display: flex;
+  gap: 1rem;
 }
 nav a {
   text-transform: capitalize;
@@ -185,6 +186,9 @@ nav a {
   color: var(--clr-primary-1);
   letter-spacing: var(--spacing);
   margin-right: 1rem;
+}
+nav a.active {
+  color: var(--clr-primary-5);
 }
 nav a:hover {
   color: var(--clr-primary-5);
