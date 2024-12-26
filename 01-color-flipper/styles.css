@@ -213,6 +213,9 @@ main {
   border-radius: var(--radius);
   margin-bottom: 2.5rem;
 }
+.container h2:first-of-type {
+  margin-bottom: -5px;
+}
 .color {
   color: var(--clr-primary-5);
 }
@@ -235,4 +238,22 @@ main {
 .btn-hero:hover {
   color: var(--clr-white);
   background: var(--clr-black);
+}
+.color-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+.color-rectangle {
+  width: 5em;
+  height: 5em;
+  border: 4px solid var(--clr-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+}
+#direction {
+  font-size: 2rem;
 }
