@@ -47,7 +47,7 @@ let autoSlide;
 const startAutoSlide = () => {
   autoSlide = setInterval(() => {
     nextBtn.click();
-  }, 3000);
+  }, 5000);
 };
 
 // load initial item
@@ -58,10 +58,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const showPerson = (person) => {
   const item = reviews[person];
+
+  // Add hide class
+  img.classList.add("hide");
+  author.classList.add("hide");
+  job.classList.add("hide");
+  info.classList.add("hide");
+
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+
+  setTimeout(() => {
+    // Remove hide class and add show class
+    img.classList.remove("hide");
+    author.classList.remove("hide");
+    job.classList.remove("hide");
+    info.classList.remove("hide");
+  }, 750);
 };
 
 nextBtn.addEventListener("click", () => {

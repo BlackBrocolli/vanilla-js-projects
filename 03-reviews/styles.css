@@ -183,6 +183,7 @@ main {
   box-shadow: var(--light-shadow);
   transition: var(--transition);
   text-align: center;
+  overflow: hidden;
 }
 .review:hover {
   box-shadow: var(--dark-shadow);
@@ -269,4 +270,26 @@ main {
 .random-btn:hover {
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
+}
+
+/*
+=============== 
+Animations
+===============
+*/
+#person-img,
+#author,
+#job,
+#info {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hide {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.show {
+  transform: translateX(0);
+  opacity: 1;
 }
