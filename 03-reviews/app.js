@@ -65,10 +65,12 @@ const showPerson = (person) => {
   job.classList.add("hide");
   info.classList.add("hide");
 
-  img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
+  setTimeout(() => {
+    img.src = item.img;
+    author.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+  }, 250);
 
   setTimeout(() => {
     // Remove hide class and add show class
