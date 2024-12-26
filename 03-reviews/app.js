@@ -42,10 +42,18 @@ const randomBtn = document.querySelector(".random-btn");
 
 // set starting item
 let currentItem = 0;
+let autoSlide;
+
+const startAutoSlide = () => {
+  autoSlide = setInterval(() => {
+    nextBtn.click();
+  }, 3000);
+};
 
 // load initial item
 window.addEventListener("DOMContentLoaded", () => {
   showPerson(currentItem);
+  startAutoSlide();
 });
 
 const showPerson = (person) => {
@@ -57,22 +65,28 @@ const showPerson = (person) => {
 };
 
 nextBtn.addEventListener("click", () => {
+  clearInterval(autoSlide);
   currentItem++;
   if (currentItem > reviews.length - 1) {
     currentItem = 0;
   }
   showPerson(currentItem);
+  startAutoSlide();
 });
 
 prevBtn.addEventListener("click", () => {
+  clearInterval(autoSlide);
   currentItem--;
   if (currentItem < 0) {
     currentItem = reviews.length - 1;
   }
   showPerson(currentItem);
+  startAutoSlide();
 });
 
 randomBtn.addEventListener("click", () => {
+  clearInterval(autoSlide);
   currentItem = Math.floor(Math.random() * reviews.length);
   showPerson(currentItem);
+  startAutoSlide();
 });
