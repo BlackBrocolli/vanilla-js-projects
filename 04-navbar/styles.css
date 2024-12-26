@@ -199,14 +199,27 @@ nav {
   display: none;
 }
 .links {
-  height: 0;
+  height: 100vh;
   overflow: hidden;
   transition: var(--transition);
+  width: 0;
+  background-color: var(--clr-white);
+  position: absolute;
 }
 .show-links {
-  height: 10rem;
+  width: 75%;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .links {
+    height: 0;
+    width: 100%;
+  }
+
+  .show-links {
+    height: 10rem;
+  }
+}
+@media screen and (min-width: 1024px) {
   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
@@ -224,6 +237,9 @@ nav {
   .links {
     height: auto;
     display: flex;
+    position: initial;
+    width: 100%;
+    justify-content: center;
   }
   .links a {
     padding: 0;
