@@ -58,6 +58,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const showPerson = (person) => {
   const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+};
+
+const animatePerson = (person) => {
+  const item = reviews[person];
 
   // Add hide class
   img.classList.add("hide");
@@ -87,7 +95,7 @@ nextBtn.addEventListener("click", () => {
   if (currentItem > reviews.length - 1) {
     currentItem = 0;
   }
-  showPerson(currentItem);
+  animatePerson(currentItem);
   startAutoSlide();
 });
 
@@ -97,13 +105,13 @@ prevBtn.addEventListener("click", () => {
   if (currentItem < 0) {
     currentItem = reviews.length - 1;
   }
-  showPerson(currentItem);
+  animatePerson(currentItem);
   startAutoSlide();
 });
 
 randomBtn.addEventListener("click", () => {
   clearInterval(autoSlide);
   currentItem = Math.floor(Math.random() * reviews.length);
-  showPerson(currentItem);
+  animatePerson(currentItem);
   startAutoSlide();
 });
