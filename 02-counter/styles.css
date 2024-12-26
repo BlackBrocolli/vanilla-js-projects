@@ -188,3 +188,12 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
+.step-container {
+  margin: 0.5rem;
+}
+select {
+  padding: 0.375rem 0.75rem;
+  border: 2px solid var(--clr-black);
+  border-radius: var(--radius);
+  margin-left: 0.5rem;
+}
