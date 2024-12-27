@@ -206,7 +206,6 @@ Sidebar
   justify-self: center;
   height: 40px;
 }
-
 .links a {
   display: block;
   font-size: 1.5rem;
@@ -219,6 +218,13 @@ Sidebar
   background: var(--clr-primary-8);
   color: var(--clr-primary-5);
   padding-left: 1.75rem;
+}
+.dropdown {
+  display: none;
+  padding-left: 1rem;
+}
+.show-dropdown .dropdown {
+  display: block;
 }
 .social-icons {
   justify-self: center;
@@ -234,7 +240,17 @@ Sidebar
 .social-icons a:hover {
   color: var(--clr-primary-1);
 }
-
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dropdown-icon {
+  margin-right: 1rem;
+}
+.show-dropdown .dropdown-icon {
+  transform: rotate(180deg);
+}
 .sidebar {
   position: fixed;
   top: 0;
